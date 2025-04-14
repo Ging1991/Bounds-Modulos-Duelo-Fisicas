@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Ging1991.Contadores {
 
-	public class Contador : MonoBehaviour {
+	public class ContadorSimbolo : MonoBehaviour {
 
 		public void SetValor(Color color, int valor, int valorMaxVisible, int valorMaxHabilitado) {
 
