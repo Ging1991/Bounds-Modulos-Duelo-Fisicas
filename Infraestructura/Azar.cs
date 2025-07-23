@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Bounds.Global.Colecciones;
 
 namespace Ging1991.Infraestructura {
 
@@ -14,6 +15,11 @@ namespace Ging1991.Infraestructura {
 
 
 		public static int ValorAleatorio(List<int> elementos) {
+			return elementos[GenerarEnteroEntre(0, elementos.Count)];
+		}
+
+
+		public static Coleccion.Carta ValorAleatorio(List<Coleccion.Carta> elementos) {
 			return elementos[GenerarEnteroEntre(0, elementos.Count)];
 		}
 
