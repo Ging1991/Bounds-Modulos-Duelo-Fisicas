@@ -1,6 +1,6 @@
 {
 	"name": "com.bounds.modulos.fisicas",
-	"version": "1.0.1",
+	"version": "2.0.0",
 	"displayName": "Bounds - Fisicas",
 	"description": "Librería base para soportar otras liberías que he creado.",
 	"unity": "2022.3",
