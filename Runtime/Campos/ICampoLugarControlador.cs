@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Bounds.Modulos.Duelo.Fisicas {
+namespace Bounds.Fisicas.Campos {
 
 	public interface ICampoLugarControlador {
 

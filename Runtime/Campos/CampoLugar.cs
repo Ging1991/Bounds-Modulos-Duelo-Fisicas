@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Bounds.Modulos.Duelo.Fisicas {
+namespace Bounds.Fisicas.Campos {
 
 	public class CampoLugar : MonoBehaviour, IDropHandler {
 
