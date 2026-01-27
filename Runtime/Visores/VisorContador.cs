@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-//using Bounds.Modulos.Duelo.Visuales;
+using Bounds.Visuales;
 using UnityEngine;
 
 namespace Bounds.Duelo.Carta {
@@ -21,7 +21,7 @@ namespace Bounds.Duelo.Carta {
 
 				Quaternion rotacion = Quaternion.Euler(0, 0, 0);
 				instancia.transform.localRotation = rotacion;
-				//instancia.GetComponent<ContadorBounds>().SetTipoVisor(tipo);
+				instancia.GetComponent<ContadorVisor>().SetTipo(tipo);
 				contadores.Add(tipo, instancia);
 			}
 
@@ -32,7 +32,7 @@ namespace Bounds.Duelo.Carta {
 
 			}
 			else {
-				//contador.GetComponent<ContadorBounds>().SetCantidad(cantidad);
+				contador.GetComponent<ContadorVisor>().SetCantidad(cantidad);
 			}
 		}
 

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-//using Bounds.Modulos.Duelo.Visuales;
+using Bounds.Visuales;
 using UnityEngine;
 
 namespace Bounds.Fisicas.Carta {
@@ -25,7 +25,7 @@ namespace Bounds.Fisicas.Carta {
 
 				instancia.transform.localRotation = rotacion;
 
-				//instancia.GetComponent<ContadorBounds>().SetTipo(tipo);
+				instancia.GetComponent<ContadorCarta>().SetTipo(tipo);
 				contadores.Add(tipo, instancia);
 			}
 
@@ -36,7 +36,7 @@ namespace Bounds.Fisicas.Carta {
 
 			}
 			else {
-				//contador.GetComponent<ContadorBounds>().SetCantidad(cantidad);
+				contador.GetComponent<ContadorCarta>().SetCantidad(cantidad);
 			}
 		}
 

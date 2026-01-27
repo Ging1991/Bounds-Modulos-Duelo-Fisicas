@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4fff9a8f6dc59d4596c06dacb8f464f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  claseContador: {fileID: 2239987375144190869, guid: 3fc20856b12163742821d24decf5cc1c, type: 3}
+  claseContador: {fileID: 6652813811733876289, guid: f7c64d24d98856b408654903ee0fa755, type: 3}
 --- !u!1001 &6955080907995449740
 PrefabInstance:
   m_ObjectHideFlags: 0
