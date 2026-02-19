@@ -50,13 +50,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 672ee594a9f18d640a5bedf1d11c9683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ilustradorDeCartas: {fileID: 0}
   datosDeCartas: {fileID: 0}
   datosDeEfectos: {fileID: 0}
-  traductorClases: {fileID: 0}
-  traductorTipos: {fileID: 0}
-  traductorPerfecciones: {fileID: 0}
-  visorGeneral: {fileID: 3723714799561818671}
+  visorGeneral: {fileID: 5182417281622115492}
   visorContador: {fileID: 425628716352187041}
 --- !u!114 &425628716352187041
 MonoBehaviour:
@@ -173,9 +169,9 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7087381890804530099, guid: c7fd795050d8fe540a00c338b17c81e7, type: 3}
   m_PrefabInstance: {fileID: 6955080907995449740}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3723714799561818671 stripped
+--- !u!114 &5182417281622115492 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5992078740230032291, guid: c7fd795050d8fe540a00c338b17c81e7, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2841432934966431016, guid: c7fd795050d8fe540a00c338b17c81e7, type: 3}
   m_PrefabInstance: {fileID: 6955080907995449740}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

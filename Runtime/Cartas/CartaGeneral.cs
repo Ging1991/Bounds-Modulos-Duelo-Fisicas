@@ -3,6 +3,7 @@ using Bounds.Modulos.Cartas.Ilustradores;
 using Bounds.Modulos.Cartas.Persistencia;
 using Bounds.Modulos.Cartas.Tinteros;
 using Bounds.Modulos.Duelo.Fisicas;
+using Ging1991.Core.Interfaces;
 using UnityEngine;
 
 namespace Bounds.Fisicas.Carta {
@@ -12,7 +13,7 @@ namespace Bounds.Fisicas.Carta {
 		public bool bocaArriba = true;
 		private ICartaObservador observador;
 
-		public void Iniciar(int cartaID, string imagen, string rareza, DatosDeCartas datos, IlustradorDeCartas ilustrador,
+		public void Iniciar(int cartaID, string imagen, string rareza, DatosDeCartas datos, ISelector<string, Sprite> ilustrador,
 				ITintero tintero, ICartaObservador observador) {
 			GetComponentInChildren<CartaFrente>().Inicializar(datos, ilustrador, tintero);
 			GetComponentInChildren<CartaFrente>().Mostrar(cartaID, imagen, rareza);
