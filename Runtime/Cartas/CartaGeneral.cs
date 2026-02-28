@@ -13,7 +13,7 @@ namespace Bounds.Fisicas.Carta {
 		public bool bocaArriba = true;
 		private ICartaObservador observador;
 
-		public void Iniciar(int cartaID, string imagen, string rareza, DatosDeCartas datos, ISelector<string, Sprite> ilustrador,
+		public void Iniciar(int cartaID, string imagen, string rareza, DatosDeCartas datos, IProveedor<string, Sprite> ilustrador,
 				ITintero tintero, ICartaObservador observador) {
 			GetComponentInChildren<CartaFrente>().Inicializar(datos, ilustrador, tintero);
 			GetComponentInChildren<CartaFrente>().Mostrar(cartaID, imagen, rareza);
