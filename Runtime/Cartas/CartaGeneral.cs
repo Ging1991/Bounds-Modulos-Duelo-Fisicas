@@ -1,6 +1,5 @@
 ﻿using Bounds.Modulos.Cartas;
-using Bounds.Modulos.Cartas.Ilustradores;
-using Bounds.Modulos.Cartas.Persistencia;
+using Bounds.Modulos.Cartas.Persistencia.Datos;
 using Bounds.Modulos.Cartas.Tinteros;
 using Bounds.Modulos.Duelo.Fisicas;
 using Ging1991.Core.Interfaces;
@@ -13,9 +12,11 @@ namespace Bounds.Fisicas.Carta {
 		public bool bocaArriba = true;
 		private ICartaObservador observador;
 
-		public void Iniciar(int cartaID, string imagen, string rareza, DatosDeCartas datos, IProveedor<string, Sprite> ilustrador,
+		public void Iniciar(int cartaID, string imagen, string rareza, IProveedor<int, CartaBD> proveedorCartas,
+				IProveedor<string, Sprite> ilustrador,
 				ITintero tintero, ICartaObservador observador) {
-			GetComponentInChildren<CartaFrente>().Inicializar(datos, ilustrador, tintero);
+
+			GetComponentInChildren<CartaFrente>().Inicializar(proveedorCartas, ilustrador, tintero);
 			GetComponentInChildren<CartaFrente>().Mostrar(cartaID, imagen, rareza);
 			this.observador = observador;
 		}
