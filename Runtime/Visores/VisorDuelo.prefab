@@ -50,8 +50,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 672ee594a9f18d640a5bedf1d11c9683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  datosDeCartas: {fileID: 0}
-  datosDeEfectos: {fileID: 0}
   visorGeneral: {fileID: 5182417281622115492}
   visorContador: {fileID: 425628716352187041}
 --- !u!114 &425628716352187041
@@ -158,6 +156,10 @@ PrefabInstance:
     - target: {fileID: 7087381890804530099, guid: c7fd795050d8fe540a00c338b17c81e7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8033950519862400982, guid: c7fd795050d8fe540a00c338b17c81e7, type: 3}
+      propertyPath: codigo
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
