@@ -16,7 +16,7 @@ namespace Bounds.Duelo.Carta {
 				GameObject instancia = Instantiate(claseContador);
 				instancia.transform.SetParent(transform);
 
-				instancia.transform.localPosition = new Vector3(360, -80 - contadores.Keys.Count * 75, 0);
+				instancia.transform.localPosition = new Vector3(160, 240 - contadores.Keys.Count * 75, 0);
 				instancia.transform.localScale = new Vector3(1, 1, 1);
 
 				Quaternion rotacion = Quaternion.Euler(0, 0, 0);

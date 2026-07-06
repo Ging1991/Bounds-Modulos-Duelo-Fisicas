@@ -1,8 +1,5 @@
-﻿using Bounds.Modulos.Cartas;
-using Bounds.Modulos.Cartas.Persistencia.Datos;
-using Bounds.Modulos.Cartas.Tinteros;
+﻿using Bounds.Cartas;
 using Bounds.Modulos.Duelo.Fisicas;
-using Ging1991.Core.Interfaces;
 using UnityEngine;
 
 namespace Bounds.Fisicas.Carta {
@@ -11,14 +8,42 @@ namespace Bounds.Fisicas.Carta {
 
 		public bool bocaArriba = true;
 		private ICartaObservador observador;
+		public CartaFisica cartaFisica;
+		public CartaImagenID cartaImagenID;
 
-		public void Iniciar(int cartaID, string imagen, string rareza, IProveedor<int, CartaBD> proveedorCartas,
-				IProveedor<string, Sprite> ilustrador,
-				ITintero tintero, ICartaObservador observador) {
-
-			GetComponentInChildren<CartaFrente>().Inicializar(proveedorCartas, ilustrador, tintero);
-			GetComponentInChildren<CartaFrente>().Mostrar(cartaID, imagen, rareza);
+		public void Iniciar(ICartaObservador observador) {
 			this.observador = observador;
+		}
+
+		public void Mostrar(int cartaID, string imagen, string rareza, string clase, string borde, int ataque, int defensa, int nivel) {
+
+			cartaImagenID.primitiva.SetIlustracionImagen(cartaImagenID.generador.GetImagen(cartaID, imagen));
+
+			Color tintaRareza = cartaImagenID.generador.proveedorColores.GetElemento($"TINTA_{rareza}");
+			cartaImagenID.primitiva.SetFondoBordeColor(tintaRareza);
+
+			cartaImagenID.SetNivel(nivel, rareza);
+
+			cartaImagenID.primitiva.SetFondoRellenoColor(cartaImagenID.generador.proveedorColores.GetElemento($"RELLENO_{borde}"));
+			cartaImagenID.primitiva.ataque.SetColorRelleno(cartaImagenID.generador.proveedorColores.GetElemento($"RELLENO_CLARO_{borde}"));
+			cartaImagenID.primitiva.defensa.SetColorRelleno(cartaImagenID.generador.proveedorColores.GetElemento($"RELLENO_CLARO_{borde}"));
+
+			if (clase == "CRIATURA") {
+				cartaImagenID.primitiva.ataque.gameObject.SetActive(true);
+				cartaImagenID.primitiva.defensa.gameObject.SetActive(true);
+				cartaImagenID.primitiva.ataque.SetValor(ataque);
+				cartaImagenID.primitiva.defensa.SetValor(defensa);
+			}
+			else if (clase == "EQUIPO") {
+				cartaImagenID.primitiva.ataque.gameObject.SetActive(false);
+				cartaImagenID.primitiva.defensa.gameObject.SetActive(true);
+				cartaImagenID.primitiva.defensa.SetValor(defensa);
+			}
+			else {
+				cartaImagenID.primitiva.ataque.gameObject.SetActive(false);
+				cartaImagenID.primitiva.defensa.gameObject.SetActive(false);
+			}
+
 		}
 
 
@@ -29,7 +54,7 @@ namespace Bounds.Fisicas.Carta {
 
 		public void ColocarBocaAbajo(bool inmediato = true) {
 			if (bocaArriba) {
-				GetComponentInChildren<CartaFisica>().ColocarBocaAbajo();
+				cartaFisica.ColocarBocaAbajo();
 				bocaArriba = false;
 			}
 		}
@@ -37,7 +62,7 @@ namespace Bounds.Fisicas.Carta {
 
 		public void ColocarBocaArriba(bool inmediato = true) {
 			if (!bocaArriba) {
-				GetComponentInChildren<CartaFisica>().ColocarBocaArriba();
+				cartaFisica.ColocarBocaArriba();
 				bocaArriba = true;
 			}
 		}
