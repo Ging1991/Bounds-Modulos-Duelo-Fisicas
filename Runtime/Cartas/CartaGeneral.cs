@@ -1,5 +1,6 @@
 ﻿using Bounds.Cartas;
 using Bounds.Modulos.Duelo.Fisicas;
+using DG.Tweening;
 using UnityEngine;
 
 namespace Bounds.Fisicas.Carta {
@@ -65,6 +66,11 @@ namespace Bounds.Fisicas.Carta {
 				cartaFisica.ColocarBocaArriba();
 				bocaArriba = true;
 			}
+		}
+
+
+		public void Sacudir() {
+			transform.DOShakePosition(0.5f, 0.9f, 15);
 		}
 
 
