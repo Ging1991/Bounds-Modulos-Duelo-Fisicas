@@ -7,7 +7,6 @@ namespace Bounds.Fisicas.Carta {
 
 	public class CartaGeneral : MonoBehaviour {
 
-		public bool bocaArriba = true;
 		private ICartaObservador observador;
 		public CartaFisica cartaFisica;
 		public CartaImagenID cartaImagenID;
@@ -50,22 +49,6 @@ namespace Bounds.Fisicas.Carta {
 
 		void OnMouseDown() {
 			observador.PresionarCarta(1, gameObject);
-		}
-
-
-		public void ColocarBocaAbajo(bool inmediato = true) {
-			if (bocaArriba) {
-				cartaFisica.ColocarBocaAbajo();
-				bocaArriba = false;
-			}
-		}
-
-
-		public void ColocarBocaArriba(bool inmediato = true) {
-			if (!bocaArriba) {
-				cartaFisica.ColocarBocaArriba();
-				bocaArriba = true;
-			}
 		}
 
 
