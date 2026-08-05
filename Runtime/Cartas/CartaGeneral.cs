@@ -18,30 +18,22 @@ namespace Bounds.Fisicas.Carta {
 		public void Mostrar(int cartaID, string imagen, string rareza, string clase, string borde, int ataque, int defensa, int nivel) {
 
 			cartaImagenID.primitiva.SetIlustracionImagen(cartaImagenID.generador.GetImagen(cartaID, imagen));
+			cartaImagenID.primitiva.SetArteExtendido(rareza == "SEC" || rareza == "LEG");
 
 			Color tintaRareza = cartaImagenID.generador.proveedorColores.GetElemento($"TINTA_{rareza}");
 			cartaImagenID.primitiva.SetFondoBordeColor(tintaRareza);
 
 			cartaImagenID.SetNivel(nivel, rareza);
-
-			cartaImagenID.primitiva.SetFondoRellenoColor(cartaImagenID.generador.proveedorColores.GetElemento($"RELLENO_{borde}"));
-			cartaImagenID.primitiva.ataque.SetColorRelleno(cartaImagenID.generador.proveedorColores.GetElemento($"RELLENO_CLARO_{borde}"));
-			cartaImagenID.primitiva.defensa.SetColorRelleno(cartaImagenID.generador.proveedorColores.GetElemento($"RELLENO_CLARO_{borde}"));
+			cartaImagenID.SetColorClase(borde);
 
 			if (clase == "CRIATURA") {
-				cartaImagenID.primitiva.ataque.gameObject.SetActive(true);
-				cartaImagenID.primitiva.defensa.gameObject.SetActive(true);
-				cartaImagenID.primitiva.ataque.SetValor(ataque);
-				cartaImagenID.primitiva.defensa.SetValor(defensa);
+				cartaImagenID.SetEstadisticas(ataque, defensa, -1);
 			}
 			else if (clase == "EQUIPO") {
-				cartaImagenID.primitiva.ataque.gameObject.SetActive(false);
-				cartaImagenID.primitiva.defensa.gameObject.SetActive(true);
-				cartaImagenID.primitiva.defensa.SetValor(defensa);
+				cartaImagenID.SetEstadisticas(-1, -1, defensa);
 			}
 			else {
-				cartaImagenID.primitiva.ataque.gameObject.SetActive(false);
-				cartaImagenID.primitiva.defensa.gameObject.SetActive(false);
+				cartaImagenID.SetEstadisticas(-1, -1, -1);
 			}
 
 		}
